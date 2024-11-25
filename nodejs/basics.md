@@ -1,9 +1,8 @@
 ## **Consolidated JavaScript Basics**
 
 
-### <a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> <a href="./README.md">NodeJs</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> Basics Of Js
+### **<a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> <a href="./README.md">NodeJs</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> Basics Of Js**
 
----
 ## 🎯 Table of Contents
 
 | No. | Topic                                                   | Description |

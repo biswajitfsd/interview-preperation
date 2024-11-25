@@ -72,6 +72,8 @@ console.log(globalVar); // Global
 
 - Avoid using `var` due to its lack of block scope.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **2. IIFE (Immediately Invoked Function Expression)**
@@ -100,6 +102,8 @@ initialization.
 **Don'ts**
 
 - Avoid excessive use of IIFEs when block scope (`let`, `const`) suffices.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -132,6 +136,8 @@ function foo() {
 **Don'ts**
 
 - Avoid relying on implicit hoisting for variable initializations.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -168,6 +174,8 @@ console.log(increment()); // 2
 
 - Avoid creating closures inside large loops for memory efficiency.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **5. Callbacks**
@@ -198,6 +206,8 @@ fetchData((data) => console.log(data)); // Data received
 **Don'ts**
 
 - Avoid deeply nested callbacks ("callback hell").
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -230,6 +240,8 @@ promise
 **Don'ts**
 
 - Avoid mixing Promises and callbacks.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -266,6 +278,8 @@ fetchData();
 **Don'ts**
 
 - Avoid blocking the event loop with long-running `await`.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -308,6 +322,8 @@ Timeout callback
 
 - Avoid blocking the event loop with synchronous operations.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **9. Data Types and Type Conversion**
@@ -344,6 +360,8 @@ console.log(typeof convertedNum); // number
 
 - Avoid relying on implicit coercion.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **10. Loops**
@@ -377,6 +395,8 @@ for (let num of array) {
 **Don'ts**
 
 - Avoid infinite loops; ensure exit conditions.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -414,6 +434,8 @@ console.log(add(2, 3)); // 5
 
 - Avoid deeply nested functions.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **12. Arrays**
@@ -444,6 +466,8 @@ console.log(doubled); // [2, 4, 6]
 
 - Avoid manually iterating arrays when a method exists.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **13. Objects**
@@ -472,6 +496,8 @@ console.log(person); // { name: "John", age: 30, job: "Developer" }
 
 - Avoid mutating objects directly when possible.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **14. Template Literals**
@@ -498,6 +524,8 @@ console.log(greeting); // Hello, Alice!
 **Don'ts**
 
 - Avoid using concatenation when template literals suffice.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -529,6 +557,8 @@ console.log(first); // 1
 **Don'ts**
 
 - Avoid over-complicating destructuring in deeply nested structures.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -564,6 +594,8 @@ console.log(sum(1, 2, 3)); // 6
 
 - Avoid overusing spread for large datasets.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **17. Conditional Statements**
@@ -595,6 +627,8 @@ console.log(result); // Adult
 
 - Avoid deeply nested conditionals.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **18. Truthy and Falsy Values**
@@ -625,6 +659,8 @@ if (0) {
 **Don'ts**
 
 - Avoid relying on implicit type conversion for truthy/falsy checks.
+
+#### [Back to Top](#-table-of-contents)
 
 ---
 
@@ -689,6 +725,8 @@ console.log(greet("Alice")); // Hello, Alice!
 
 - Avoid exporting large, unrelated functions in one module.
 
+#### [Back to Top](#-table-of-contents)
+
 ---
 
 ### **21. Error Handling**
@@ -718,3 +756,5 @@ try {
 **Don'ts**
 
 - Avoid exposing sensitive information in error messages.
+
+#### [Back to Top](#-table-of-contents)

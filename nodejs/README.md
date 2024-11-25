@@ -4,7 +4,7 @@
 
 ![Node Js Banner@2x.png](../img/Node%20Js%20Banner@2x.png)
 
-A comprehensive collection of 100 Node.js interview questions covering fundamental JavaScript concepts, Node.js specifics, and best practices. Perfect for both interviewers and candidates preparing for technical interviews.
+A comprehensive collection of 100+ Node.js interview questions covering fundamental JavaScript concepts, Node.js specifics, and best practices. Perfect for both interviewers and candidates preparing for technical interviews.
 
 ## 🎯 Table of Contents
 

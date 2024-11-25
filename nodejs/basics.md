@@ -6,29 +6,29 @@
 ---
 ## 🎯 Table of Contents
 
-| No. | Topic | Description |
-|-----|-------|-------------|
-| 1 | [Scope](#scope) | Global, Function, and Block scope concepts |
-| 2 | [IIFE](#iife-immediately-invoked-function-expression) | Immediately Invoked Function Expression patterns |
-| 3 | [Hoisting](#hoisting) | Variable and function declaration hoisting |
-| 4 | [Closures](#closures) | Functions retaining access to parent scope |
-| 5 | [Callbacks](#callbacks) | Functions passed as arguments |
-| 6 | [Promises](#promises) | Handling asynchronous operations |
-| 7 | [Async & Await](#async--await) | Modern async programming patterns |
-| 8 | [Event Loop](#event-loop) | JavaScript's event handling mechanism |
-| 9 | [Data Types](#data-types-and-type-conversion) | Primitive and non-primitive types |
-| 10 | [Loops](#loops) | Different looping structures |
-| 11 | [Functions](#functions) | Function declarations, expressions, and arrows |
-| 12 | [Arrays](#arrays) | Array manipulation and methods |
-| 13 | [Objects](#objects) | Object handling and manipulation |
-| 14 | [Template Literals](#template-literals) | String interpolation and multi-line strings |
-| 15 | [Destructuring](#destructuring) | Extracting values from arrays/objects |
-| 16 | [Spread/Rest](#spread-and-rest-operators) | Spread and rest operator usage |
-| 17 | [Conditionals](#conditional-statements) | Control flow statements |
-| 18 | [Truthy/Falsy](#truthy-and-falsy-values) | Boolean context evaluations |
-| 19 | [Event Handling](#event-handling) | Managing user interactions |
-| 20 | [Modules](#modules) | Code organization with imports/exports |
-| 21 | [Error Handling](#error-handling) | Exception handling with try-catch |
+| No. | Topic                                                   | Description |
+|-----|---------------------------------------------------------|-------------|
+| 1 | [Scope](#1-scope)                                       | Global, Function, and Block scope concepts |
+| 2 | [IIFE](#2-iife-immediately-invoked-function-expression) | Immediately Invoked Function Expression patterns |
+| 3 | [Hoisting](#3-hoisting)                                 | Variable and function declaration hoisting |
+| 4 | [Closures](#4-closures)                                 | Functions retaining access to parent scope |
+| 5 | [Callbacks](#5-callbacks)                               | Functions passed as arguments |
+| 6 | [Promises](#6-promises)                                 | Handling asynchronous operations |
+| 7 | [Async & Await](#7-async--await)                        | Modern async programming patterns |
+| 8 | [Event Loop](#8-event-loop)                             | JavaScript's event handling mechanism |
+| 9 | [Data Types](#9-data-types-and-type-conversion)         | Primitive and non-primitive types |
+| 10 | [Loops](#10-loops)                                      | Different looping structures |
+| 11 | [Functions](#11-functions)                              | Function declarations, expressions, and arrows |
+| 12 | [Arrays](#12-arrays)                                    | Array manipulation and methods |
+| 13 | [Objects](#13-objects)                                  | Object handling and manipulation |
+| 14 | [Template Literals](#14-template-literals)              | String interpolation and multi-line strings |
+| 15 | [Destructuring](#15-destructuring)                      | Extracting values from arrays/objects |
+| 16 | [Spread/Rest](#16-spread-and-rest-operators)            | Spread and rest operator usage |
+| 17 | [Conditionals](#17-conditional-statements)              | Control flow statements |
+| 18 | [Truthy/Falsy](#18-truthy-and-falsy-values)             | Boolean context evaluations |
+| 19 | [Event Handling](#19-event-handling)                    | Managing user interactions |
+| 20 | [Modules](#20-modules)                                  | Code organization with imports/exports |
+| 21 | [Error Handling](#21-error-handling)                    | Exception handling with try-catch |
 
 ---
 

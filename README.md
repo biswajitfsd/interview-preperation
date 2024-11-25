@@ -2,6 +2,8 @@
 
 Welcome to the **Interview Preparation** repository! This collection is designed to help you master interview questions for **Python**, **Node.js**, and **PHP**. Each section contains comprehensive questions, examples, and best practices to help you excel in technical interviews.
 
+![Main Banner@2x.png](./img/Main%20Banner@2x.png)
+
 ## 📂 Repository Structure
 
 ```plaintext

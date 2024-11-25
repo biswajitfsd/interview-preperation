@@ -1,31 +1,20 @@
-# Node.js Interview Questions and Answers
+# PHP Interview Questions and Answers
 
-### **<a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> NodeJs**
+### **<a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> PHP**
 
-![Node Js Banner@2x.png](../img/Node%20Js%20Banner@2x.png)
+![PHP Banner@2x.png](../img/PHP%20Banner%402x.png)
 
-A comprehensive collection of 100+ Node.js interview questions covering fundamental JavaScript concepts, Node.js specifics, and best practices. Perfect for both interviewers and candidates preparing for technical interviews.
+
 
 ## 🎯 Table of Contents
 
 | No. | Section                 |
 |-----|------------------------|
-| 1   | [Basics](./basics.md)  |
-| 2   | [1-10](./1-10.md)     |
-| 3   | [11-20](./11-20.md)   |
-| 4   | [21-30](./21-30.md)   |
-| 5   | [31-40](./31-40.md)   |
-| 6   | [41-50](./41-50.md)   |
-| 7   | [51-60](./51-60.md)   |
-| 8   | [61-70](./61-70.md)   |
-| 9   | [71-80](./71-80.md)   |
-| 10  | [81-90](./81-90.md)   |
-| 11  | [91-100](./91-100.md) |
 
 
 ## 🚀 Introduction
 
-This repository contains carefully curated Node.js interview questions with detailed explanations, practical examples, and best practices. Each question includes:
+This repository contains carefully curated PHP interview questions with detailed explanations, practical examples, and best practices. Each question includes:
 - Detailed explanation
 - Code examples
 - Common pitfalls to avoid
@@ -57,10 +46,14 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 🔍 Additional Resources
 
-- [Node.js Official Documentation](https://nodejs.org/docs/)
-- [Express.js Documentation](https://expressjs.com/)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [JavaScript MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [PHP Official Documentation](https://www.php.net/docs.php)
+- [Laravel Documentation](https://laravel.com/docs/)
+- [Symfony Documentation](https://symfony.com/doc/current/index.html)
+- [PHP: The Right Way](https://phptherightway.com/)
+- [Composer - Dependency Manager for PHP](https://getcomposer.org/doc/)
+- [CodeIgniter Documentation](https://codeigniter.com/userguide3/)
+- [PHPStan - Static Analysis Tool Documentation](https://phpstan.org/)
+- [PHP-FIG Standards](https://www.php-fig.org/)
 
 ## 🔄 Regular Updates
 

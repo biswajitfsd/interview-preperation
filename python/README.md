@@ -1,31 +1,19 @@
-# Node.js Interview Questions and Answers
+# Python Interview Questions and Answers
 
-### **<a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> NodeJs**
+### **<a href="../README.md">Interview Preparation</a> <img src="../img/icons8-right-25.png" alt="arrow" style="width:15px; height:15px;"> Python**
 
-![Node Js Banner@2x.png](../img/Node%20Js%20Banner@2x.png)
+![Python Banner@2x.png](../img/Python%20Banner%402x.png)
 
-A comprehensive collection of 100+ Node.js interview questions covering fundamental JavaScript concepts, Node.js specifics, and best practices. Perfect for both interviewers and candidates preparing for technical interviews.
+
 
 ## 🎯 Table of Contents
 
 | No. | Section                 |
 |-----|------------------------|
-| 1   | [Basics](./basics.md)  |
-| 2   | [1-10](./1-10.md)     |
-| 3   | [11-20](./11-20.md)   |
-| 4   | [21-30](./21-30.md)   |
-| 5   | [31-40](./31-40.md)   |
-| 6   | [41-50](./41-50.md)   |
-| 7   | [51-60](./51-60.md)   |
-| 8   | [61-70](./61-70.md)   |
-| 9   | [71-80](./71-80.md)   |
-| 10  | [81-90](./81-90.md)   |
-| 11  | [91-100](./91-100.md) |
-
 
 ## 🚀 Introduction
 
-This repository contains carefully curated Node.js interview questions with detailed explanations, practical examples, and best practices. Each question includes:
+This repository contains carefully curated python interview questions with detailed explanations, practical examples, and best practices. Each question includes:
 - Detailed explanation
 - Code examples
 - Common pitfalls to avoid
@@ -57,10 +45,14 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 🔍 Additional Resources
 
-- [Node.js Official Documentation](https://nodejs.org/docs/)
-- [Express.js Documentation](https://expressjs.com/)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [JavaScript MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Python Official Documentation](https://docs.python.org/3/)
+- [Real Python Tutorials](https://realpython.com/)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Django Documentation](https://docs.djangoproject.com/)
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [NumPy Documentation](https://numpy.org/doc/)
+- [Python Package Index (PyPI)](https://pypi.org/)
+- [Python on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Python)
 
 ## 🔄 Regular Updates
 

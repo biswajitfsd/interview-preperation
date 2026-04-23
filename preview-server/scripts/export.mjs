@@ -63,12 +63,18 @@ async function main() {
       }
     }
 
-    // Render each page
+    // Render each page; rewrite absolute image/link paths to include basePath
     const files = {};
     for (const p of paths) {
       const res = await fetch(`http://localhost:${PORT}/api/render?path=${encodeURIComponent(p)}`);
       if (res.ok) {
-        const { html } = await res.json();
+        let { html } = await res.json();
+        if (basePath) {
+          // src="/img/..." → src="${basePath}/img/..."
+          html = html.replace(/src="\/img\//g, `src="${basePath}/img/`);
+          // href="/img/..." → href="${basePath}/img/..." (unlikely but safe)
+          html = html.replace(/href="\/img\//g, `href="${basePath}/img/`);
+        }
         files[p] = html;
         console.log(`  rendered ${p}`);
       } else {

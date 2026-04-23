@@ -22,6 +22,12 @@ A comprehensive collection of 100+ Node.js interview questions covering fundamen
 | 10  | [81-90](./81-90.md)   |
 | 11  | [91-100](./91-100.md) |
 
+## 🎯 JD-Specific Prep Guides
+
+| Company / Role | File |
+|---|---|
+| HighLevel — Lead Engineer, Custom Objects | [jd-highlevel-lead.md](./jd-highlevel-lead.md) |
+
 
 ## 🚀 Introduction
 

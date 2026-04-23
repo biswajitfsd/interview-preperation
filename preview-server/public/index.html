@@ -18,8 +18,8 @@
       --header-h: 56px;
       --reader-h: 64px;
 
-      --bg:         #f6f8fa;
-      --bg-content: #ffffff;
+      --bg:         #161b22;
+      --bg-content: #0d1117;
       --sidebar-bg: #161b22;
       --sidebar-fg: #c9d1d9;
       --sidebar-hover: #21262d;
@@ -27,13 +27,13 @@
       --header-bg:  #0d1117;
       --header-fg:  #e6edf3;
 
-      --accent:     #1f6feb;
-      --accent-2:   #388bfd;
-      --border:     #d0d7de;
+      --accent:     #388bfd;
+      --accent-2:   #79c0ff;
+      --border:     #30363d;
       --border-dark:#30363d;
 
-      --text:       #1f2328;
-      --text-muted: #656d76;
+      --text:       #e6edf3;
+      --text-muted: #8b949e;
 
       --reader-bg:  #0d1117;
       --reader-fg:  #e6edf3;
@@ -265,17 +265,17 @@
     #content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 14px; }
     #content th, #content td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
     #content th { background: var(--bg); font-weight: 600; }
-    #content tr:nth-child(even) { background: #f9fafb; }
+    #content tr:nth-child(even) { background: #161b22; }
 
     /* Inline code */
     #content code:not(pre code) {
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
+      background: #21262d;
+      border: 1px solid #30363d;
       border-radius: 4px;
       padding: 2px 6px;
       font-family: var(--font-mono);
       font-size: 0.875em;
-      color: #c0392b;
+      color: #ff7b72;
     }
 
     /* Code blocks (server-side highlighted) */
@@ -283,7 +283,12 @@
       border-radius: var(--radius);
       margin: 16px 0;
       overflow-x: auto;
+      background: #161b22;
+      border: 1px solid #30363d;
     }
+
+    /* Override hljs background so it doesn't fight our pre background */
+    #content pre code.hljs { background: transparent; }
 
     #content pre code {
       font-family: var(--font-mono);
@@ -421,7 +426,7 @@
 
     /* ── Reading highlight ───────────────────────────────────────────────── */
     .reading-highlight {
-      background: #fffbcc;
+      background: rgba(255, 213, 0, 0.18);
       border-radius: 2px;
       transition: background 0.3s;
     }
@@ -602,9 +607,9 @@
     }
 
     // ── Router ─────────────────────────────────────────────────────────────
-    function navigate(filePath, pushState = true) {
+    function navigate(filePath, pushState = true, anchor = '') {
       if (!filePath) return;
-      const route = filePathToRoute(filePath);
+      const route = filePathToRoute(filePath) + (anchor ? '#' + anchor : '');
       if (pushState) {
         history.pushState({ filePath }, '', route);
       }
@@ -744,11 +749,17 @@
         const { html } = await fetchRendered(mdPath);
         contentEl.innerHTML = html;
 
-        // Wire up internal markdown links (data-md-link holds a repo-root file path)
+        // Wire up internal markdown links (data-md-link holds a repo-root file path, optionally with #anchor)
         contentEl.querySelectorAll('[data-md-link]').forEach(a => {
           a.addEventListener('click', (e) => {
             e.preventDefault();
-            navigate(a.dataset.mdLink);
+            const mdLink = a.dataset.mdLink;
+            const hashIdx = mdLink.indexOf('#');
+            if (hashIdx !== -1) {
+              navigate(mdLink.slice(0, hashIdx), true, mdLink.slice(hashIdx + 1));
+            } else {
+              navigate(mdLink);
+            }
           });
         });
 

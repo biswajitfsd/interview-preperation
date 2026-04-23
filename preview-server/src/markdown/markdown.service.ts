@@ -154,10 +154,14 @@ export class MarkdownService {
         return `<a href="${rawHref}"${titleAttr}>${text}</a>`;
       }
 
-      // Internal .md links → SPA navigation via data attribute
-      if (rawHref?.endsWith('.md') && !rawHref.startsWith('http')) {
-        const resolved = resolve(rawHref);
-        return `<a href="#" data-md-link="${resolved}"${titleAttr} class="md-link">${text}</a>`;
+      // Internal .md links (with or without #anchor) → SPA navigation via data attribute
+      if (!rawHref?.startsWith('http')) {
+        const [hrefPath, anchor] = (rawHref ?? '').split('#');
+        if (hrefPath?.endsWith('.md')) {
+          const resolved = resolve(hrefPath);
+          const hash = anchor ? `#${anchor}` : '';
+          return `<a href="#" data-md-link="${resolved}${hash}"${titleAttr} class="md-link">${text}</a>`;
+        }
       }
 
       // External links
@@ -183,13 +187,15 @@ export class MarkdownService {
       return path.posix.normalize(path.posix.join(fileDir, href));
     };
 
-    // Rewrite <a href="relative.md"> → <a href="#" data-md-link="resolved">
+    // Rewrite <a href="relative.md"> or <a href="relative.md#anchor"> → SPA link
     let result = html.replace(
-      /<a\s([^>]*?)href="([^"]*?\.md)"([^>]*?)>/gi,
+      /<a\s([^>]*?)href="([^"]*?\.md(?:#[^"]*)?)"([^>]*?)>/gi,
       (match, before, href, after) => {
         if (href.startsWith('http')) return match;
-        const resolved = resolve(href);
-        return `<a ${before}href="#" data-md-link="${resolved}"${after} class="md-link">`;
+        const [hrefPath, anchor] = href.split('#');
+        const resolved = resolve(hrefPath);
+        const hash = anchor ? `#${anchor}` : '';
+        return `<a ${before}href="#" data-md-link="${resolved}${hash}"${after} class="md-link">`;
       },
     );
 

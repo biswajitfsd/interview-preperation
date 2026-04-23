@@ -574,11 +574,12 @@
     //  /python                →  python/README.md
     //  /php                   →  php/README.md
     //
+    const BASE = window.__BASE__ || '';
     const LANG_FOLDERS = ['nodejs', 'python', 'php'];
 
     function routeToFilePath(route) {
-      // route is a clean pathname, e.g. "/nodejs/1-10" or "nodejs/1-10"
-      const clean = route.replace(/^\//, '');
+      const stripped = BASE && route.startsWith(BASE) ? route.slice(BASE.length) : route;
+      const clean = stripped.replace(/^\//, '');
       if (!clean) return 'README.md';
       const parts = clean.split('/');
       const folder = parts[0];
@@ -588,9 +589,9 @@
     }
 
     function filePathToRoute(filePath) {
-      if (!filePath || filePath === 'README.md') return '/';
-      if (filePath.endsWith('/README.md')) return '/' + filePath.replace('/README.md', '');
-      return '/' + filePath.replace(/\.md$/, '');
+      if (!filePath || filePath === 'README.md') return BASE + '/';
+      if (filePath.endsWith('/README.md')) return BASE + '/' + filePath.replace('/README.md', '');
+      return BASE + '/' + filePath.replace(/\.md$/, '');
     }
 
     // An anchor like #1-middleware-in-expressjs — not a page-level navigation
@@ -628,12 +629,18 @@
 
     // ── API calls ──────────────────────────────────────────────────────────
     async function fetchFileTree() {
+      if (window.__CONTENT__) return window.__CONTENT__.tree;
       const res = await fetch('/api/files');
       if (!res.ok) throw new Error('Failed to load file tree');
       return res.json();
     }
 
     async function fetchRendered(mdPath) {
+      if (window.__CONTENT__) {
+        const html = window.__CONTENT__.files[mdPath];
+        if (html != null) return { html, path: mdPath };
+        throw new Error(`File not found: ${mdPath}`);
+      }
       const res = await fetch(`/api/render?path=${encodeURIComponent(mdPath)}`);
       if (!res.ok) throw new Error(`Failed to load: ${mdPath}`);
       return res.json();
@@ -996,6 +1003,14 @@
 
       const initialPath = routeToFilePath(location.pathname) || 'README.md';
       navigate(initialPath, false);
+    }
+
+    // Handle GitHub Pages deep-link redirect (written by 404.html)
+    const __redirect = sessionStorage.getItem('__redirect');
+    if (__redirect) {
+      sessionStorage.removeItem('__redirect');
+      const targetPath = routeToFilePath(__redirect.split(/[?#]/)[0]);
+      if (targetPath) history.replaceState(null, '', filePathToRoute(targetPath));
     }
 
     init();

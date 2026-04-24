@@ -130,6 +130,9 @@ dist
 # IDE
 .idea
 
+# Claude Code machine-local settings (contains absolute paths)
+.claude/settings.local.json
+
 # Preview server build artifacts
 preview-server/dist/
 preview-server/dist-static/

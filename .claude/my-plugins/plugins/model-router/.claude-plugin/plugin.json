@@ -1,0 +1,4 @@
+{
+  "name": "model-router",
+  "description": "Routes tasks to the right Claude model: Haiku for scripts/simple tasks, Sonnet for planning/complex impl"
+}

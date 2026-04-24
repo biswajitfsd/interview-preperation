@@ -1,0 +1,16 @@
+{
+  "name": "project-codex-plugins",
+  "description": "Project-local plugin metadata for interview-preperation",
+  "owner": {
+    "name": "Biswajit",
+    "email": "biswajit1305@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "model-router",
+      "description": "Routes tasks to the appropriate model for simple versus complex work",
+      "source": "./plugins/model-router",
+      "category": "productivity"
+    }
+  ]
+}

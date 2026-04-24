@@ -1,0 +1,6 @@
+{
+  "projectLocal": true,
+  "commandsDir": ".codex/commands",
+  "skillsDir": ".codex/skills",
+  "pluginCatalog": ".codex/plugins/marketplace.json"
+}

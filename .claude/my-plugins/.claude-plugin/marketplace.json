@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "project-plugins",
+  "description": "Project-local plugins for interview-preperation",
+  "owner": {
+    "name": "Biswajit",
+    "email": "biswajit1305@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "model-router",
+      "description": "Routes tasks to the right Claude model: Haiku for scripts/simple, Sonnet for planning/complex",
+      "source": "./plugins/model-router",
+      "category": "productivity"
+    }
+  ]
+}

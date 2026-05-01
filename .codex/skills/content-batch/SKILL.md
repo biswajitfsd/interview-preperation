@@ -1,3 +1,10 @@
+---
+name: content-batch
+description: Use this skill when adding or updating interview question batches in this repository while preserving numbering, Markdown consistency, and section README table of contents updates.
+metadata:
+  short-description: Maintain interview content batches
+---
+
 # Content Batch Skill
 
 Use this skill when adding or updating interview question batches in this repository.

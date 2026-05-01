@@ -451,10 +451,55 @@
 
     #toast.show { opacity: 1; transform: translateY(0); }
 
+    /* ── Hamburger button (mobile only) ─────────────────────────────────── */
+    #btn-menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius);
+      border: 1px solid #30363d;
+      background: transparent;
+      color: var(--header-fg);
+      font-size: 18px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    #btn-menu-toggle:hover { background: #21262d; border-color: #8b949e; }
+
+    /* ── Sidebar overlay (mobile) ────────────────────────────────────────── */
+    #sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 150;
+    }
+
+    #sidebar-overlay.visible { display: block; }
+
     /* ── Responsive ──────────────────────────────────────────────────────── */
     @media (max-width: 768px) {
-      :root { --sidebar-w: 220px; }
+      :root { --sidebar-w: 260px; }
       main { padding: 20px 16px; }
+
+      #btn-menu-toggle { display: flex; }
+
+      aside {
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        height: calc(100% - var(--header-h));
+        z-index: 200;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.4);
+      }
+
+      aside.open { transform: translateX(0); }
     }
   </style>
 </head>
@@ -462,12 +507,16 @@
 
   <!-- ── Header ────────────────────────────────────────────────────────── -->
   <header>
+    <button id="btn-menu-toggle" aria-label="Toggle menu" title="Toggle menu">☰</button>
     <div class="logo">📚 Interview <span>Prep</span></div>
     <div class="breadcrumb" id="breadcrumb">Home</div>
     <button id="btn-toggle-reader" title="Toggle screen reader (Alt+R)">
       <span>🔊</span> <span>Read Aloud</span>
     </button>
   </header>
+
+  <!-- ── Sidebar backdrop (mobile) ────────────────────────────────────── -->
+  <div id="sidebar-overlay"></div>
 
   <!-- ── Body layout ───────────────────────────────────────────────────── -->
   <div class="layout">
@@ -547,6 +596,28 @@
     const readerPanel    = document.getElementById('reader-panel');
     const btnToggle      = document.getElementById('btn-toggle-reader');
     const toastEl        = document.getElementById('toast');
+    const sidebarEl      = document.querySelector('aside');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const btnMenuToggle  = document.getElementById('btn-menu-toggle');
+
+    // ── Mobile sidebar ─────────────────────────────────────────────────────
+    function isMobile() { return window.innerWidth <= 768; }
+
+    function openSidebar() {
+      sidebarEl.classList.add('open');
+      sidebarOverlay.classList.add('visible');
+    }
+
+    function closeSidebar() {
+      sidebarEl.classList.remove('open');
+      sidebarOverlay.classList.remove('visible');
+    }
+
+    btnMenuToggle.addEventListener('click', () => {
+      sidebarEl.classList.contains('open') ? closeSidebar() : openSidebar();
+    });
+
+    sidebarOverlay.addEventListener('click', closeSidebar);
 
     // Reader controls
     const btnPlay        = document.getElementById('btn-play');
@@ -687,6 +758,7 @@
               header.classList.remove('collapsed');
               childrenEl.classList.remove('collapsed');
             }
+            if (isMobile()) closeSidebar();
           });
 
           const childrenEl = document.createElement('div');
@@ -712,7 +784,10 @@
       btn.textContent = node.name;
       btn.dataset.path = node.path;
       btn.setAttribute('title', node.path);
-      btn.addEventListener('click', () => navigate(node.path));
+      btn.addEventListener('click', () => {
+        navigate(node.path);
+        if (isMobile()) closeSidebar();
+      });
       return btn;
     }
 
